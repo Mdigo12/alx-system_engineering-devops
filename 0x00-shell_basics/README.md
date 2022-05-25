@@ -8,3 +8,4 @@ prints the absolute path name of the current working directory
 7-movethatfile, move file to another subdirectory
 8-firstdelete, deletes file
 9-firstdirdeletion, deletes a directory
+10-back, changes to previous dir
