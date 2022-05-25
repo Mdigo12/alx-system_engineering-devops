@@ -9,3 +9,4 @@ prints the absolute path name of the current working directory
 8-firstdelete, deletes file
 9-firstdirdeletion, deletes a directory
 10-back, changes to previous dir
+11-lists, lists all files in current, parent and /boot dir
