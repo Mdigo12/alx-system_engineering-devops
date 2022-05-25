@@ -10,3 +10,4 @@ prints the absolute path name of the current working directory
 9-firstdirdeletion, deletes a directory
 10-back, changes to previous dir
 11-lists, lists all files in current, parent and /boot dir
+12-file_type, prints the type of the file
