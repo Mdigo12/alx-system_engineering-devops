@@ -1,3 +1,2 @@
 #!/bin/bash
 mkdir -p welcome/to/school
-102-tree, making a directory and subdirectories
