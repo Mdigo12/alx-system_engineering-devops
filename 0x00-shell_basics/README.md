@@ -14,3 +14,4 @@ prints the absolute path name of the current working directory
 13-symbolic_link, Symlink for a /bin/ls
 14-copy_html, copy all html/newer version files
 100-lets_move, moves all files beginning with uppercase to new dir
+101-clean_emacs, removes all files ending with ~
