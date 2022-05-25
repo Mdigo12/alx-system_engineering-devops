@@ -7,3 +7,4 @@ prints the absolute path name of the current working directory
 6-firstdirectory, creates a directory named my_first_directory in the /tmp/ directory
 7-movethatfile, move file to another subdirectory
 8-firstdelete, deletes file
+9-firstdirdeletion, deletes a directory
