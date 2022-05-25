@@ -13,3 +13,4 @@ prints the absolute path name of the current working directory
 12-file_type, prints the type of the file
 13-symbolic_link, Symlink for a /bin/ls
 14-copy_html, copy all html/newer version files
+100-lets_move, moves all files beginning with uppercase to new dir
