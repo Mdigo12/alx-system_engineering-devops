@@ -17,3 +17,4 @@ prints the absolute path name of the current working directory
 101-clean_emacs, removes all files ending with ~
 102-tree, making a directory and subdirectories
 103-commas, list all content separated by commas
+school.mgc, to detect school data files
