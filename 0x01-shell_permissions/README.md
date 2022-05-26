@@ -3,3 +3,4 @@
 2-groups, prints all groups user is part of
 3-new_owner, changes file hello ownership
 4-empty, creates empty file
+5-execute,  gives user executable permission
