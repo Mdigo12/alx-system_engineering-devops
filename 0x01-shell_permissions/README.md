@@ -10,3 +10,4 @@
 9-John_Doe, changes the file mode to -rwxr-x-wx
 10-mirror_permissions, makes hello permissions same as olleh file
 11-directories_permissions, makes subdirectories only executable to owner, groups and others
+12-directory_permissions, make a directory with permissions
