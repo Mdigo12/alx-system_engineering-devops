@@ -7,3 +7,4 @@
 6-multiple_permissions, multiple permissions
 7-everybody, gives executable permissions to owner, group and others
 8-James_Bond, Only other users can read,write &execute
+9-John_Doe, changes the file mode to -rwxr-x-wx
