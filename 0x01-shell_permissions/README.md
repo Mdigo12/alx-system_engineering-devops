@@ -4,3 +4,4 @@
 3-new_owner, changes file hello ownership
 4-empty, creates empty file
 5-execute,  gives user executable permission
+6-multiple_permissions, multiple permissions
