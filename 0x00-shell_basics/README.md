@@ -16,3 +16,4 @@ prints the absolute path name of the current working directory
 100-lets_move, moves all files beginning with uppercase to new dir
 101-clean_emacs, removes all files ending with ~
 102-tree, making a directory and subdirectories
+103-commas, list all content separated by commas
