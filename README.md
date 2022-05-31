@@ -6,4 +6,6 @@ The repo has these directories
         Contains scripts with basic permissions
 3. 0x02-shell_redirections
         More about I/O redirection scripts
+4. 0x03-shell_variables_expansions
+         Contains scripts about shell expansions
 
