@@ -4,4 +4,6 @@ The repo has these directories
         Contains scripts with basic linux commands 
 2. 0x01-shell_permissions
         Contains scripts with basic permissions
+3. 0x02-shell_redirections
+        More about I/O redirection scripts
 
