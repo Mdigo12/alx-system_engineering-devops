@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#Prints indefinitely and doesn't terminate on SIGTER
+
+var=1
+
+while [ $var ]
+do
+	echo "To infinity and beyond"
+	sleep 2
+
+	trap 'echo "I am invincible!!!"' SIGTERM
+done
