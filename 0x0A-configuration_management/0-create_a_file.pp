@@ -3,5 +3,5 @@ file { 'school': # resource type file and filename
   mode    => '0744',   # file permissions
   owner   => 'www-data',
   group   => 'www-data',
-  content => "I love Puppet\n", # file content
+  content => "I love Puppet", # file content
 }
