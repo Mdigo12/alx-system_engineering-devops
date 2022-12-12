@@ -1,6 +1,7 @@
-# install puppet-lint using Puppet
+# install install flask from pip3 using Puppet
 
-package { 'puppet-lint':
-  ensure   => '2.1.0',
-  provider => 'gem',
+exec { 'install python packages':
+  command => 'pip3 install flask==2.1.0 Werkzeug==2.1.1 flask_restful apiai',
+  path    => ['/usr/bin/'],
+  unless  => '/usr/bin/test -f /usr/local/lib/python3.8.10/dist-packages/flask/app.py',
 }
