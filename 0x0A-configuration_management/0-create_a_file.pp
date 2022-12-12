@@ -1,5 +1,5 @@
 file { 'school': # resource type file and filename
-  path    => '/etc/school',
+  path    => '/tmp/school',
   mode    => '0744',   # file permissions
   owner   => 'www-data',
   group   => 'www-data',
