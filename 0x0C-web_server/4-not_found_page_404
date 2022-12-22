@@ -9,8 +9,27 @@ sudo apt-get install -y nginx
 sudo ufw allow 'Nginx HTTP'
 sudo chown -R "$USER":"$USER" /var/www/html/index.nginx-debian.html
 sudo chmod -R 755 /var/www
-sudo echo "Hello World!" > /var/www/html/index.nginx-debian.html
-sudo sed -i '37i\rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
-sudo echo "Ceci n'est pas une page\n" >> /var/www/html/error_404.html
-sudo sed -i '38i\error_page 404 /error_404.html;' /etc/nginx/sites-available/default
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+ERR_MSG="Ceci n'est pas une page\n"
+SERVER_CONFIG=\
+"server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+	root /var/www/html;
+	index index.html index.hml index.nginx-debian.html;
+	error_page 404 /404.html;
+	server_name _;
+	location / {
+		try_files $uri $uri/ =404;
+		error_page 404 /404.html;
+	}
+	location /redirect_me{
+		return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+	}
+	location /404.html{
+		return 404 $ERR_MSG;
+	}
+}"
+
+echo -e "$SERVER_CONFIG" > /etc/nginx/sites-available/default
 sudo service nginx start
