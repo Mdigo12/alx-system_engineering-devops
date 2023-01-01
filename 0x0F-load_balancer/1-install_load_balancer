@@ -1,14 +1,32 @@
 #!/usr/bin/env bash
-# Configures a new Ubuntu server with a HAproxy load-balancer
+# Create a script to install and configure HAProxy on lb-01 server
+# Configure HAProxy to send traffic to web-01 and web-02 servers
+# Distribute requests using a roundrobin algorithm
+# Make sure that HAProxy can be managed via an init script
 
-sudo apt-get -y install software-properties-common
-sudo add-apt-repository -y ppa:vbernat/haproxy-1.8
+# Install and configure HAproxy on my lb-01 server.
 sudo apt-get -y update
-sudo apt-get -y install haproxy=1.8.\*
-sudo sed -i '/errorfile 504/a listen thelaura' /etc/haproxy/haproxy.cfg
-sudo sed -i '/listen thelaura/a         bind :80' /etc/haproxy/haproxy.cfg
-sudo sed -i '/bind :80/a         mode http' /etc/haproxy/haproxy.cfg
-sudo sed -i '/mode http/a         server 2154-web-01 104.196.50.234:80 check' /etc/haproxy/haproxy.cfg
-sudo sed -i '/server 2154-web-01 104.196.50.234:80 check/a         server 2154-web-02 35.237.11.53:80 check' /etc/haproxy/haproxy.cfg
-sudo sed -i '/#EXTRAOPTS="-de -m 16"/a ENABLED=1' /etc/default/haproxy
-sudo service haproxy start
+sudo apt-get -y install haproxy
+
+# configure lb by editing haproxy cfg file
+DOMAIN_NAME='thebee.tech'
+INIT_FILE='/etc/default/haproxy'
+CONFIG_FILE='/etc/haproxy/haproxy.cfg'
+STUDENT_ID='56457'
+HAPROXY_LB_CONFIG=\
+"
+frontend  $DOMAIN_NAME-frontend
+	bind *:80
+	mode http
+	default_backend $DOMAIN_NAME-backend
+backend $DOMAIN_NAME-backend
+	balance roundrobin
+	server $STUDENT_ID-web-01 100.25.165.1:80 check
+	server $STUDENT_ID-web-02 100.25.167.208:80 check
+"
+echo "$HAPROXY_LB_CONFIG" | sudo tee -a $CONFIG_FILE
+
+# enable haproxy to be started by init script
+echo "ENABLED=1" | sudo tee -a $INIT_FILE
+
+sudo service haproxy restart
