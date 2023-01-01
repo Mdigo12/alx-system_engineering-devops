@@ -20,7 +20,7 @@ SERVER_CONFIG=\
 	error_page 404 /404.html;
 	server_name _;
 	location / {
-		try_files \$uri \$uri/ =404;
+		try_files $uri $uri/ =404;
 		error_page 404 /404.html;
 	}
 	location /redirect_me{
@@ -33,4 +33,4 @@ SERVER_CONFIG=\
 }"
 
 echo -e "$SERVER_CONFIG" > /etc/nginx/sites-available/default
-sudo service nginx start
+sudo service nginx restart
