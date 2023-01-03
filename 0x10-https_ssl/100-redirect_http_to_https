@@ -44,6 +44,7 @@ defaults
 frontend thebee.tech-frontend-http
         bind *:80
         mode http
+	redirect scheme https code 301 if !{ ssl_fc }
         http-request add-header X-Forwarded-Proto "http"
         default_backend thebee.tech-backend
 frontend thebee.tech-frontend-https
