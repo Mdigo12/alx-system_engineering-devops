@@ -21,7 +21,7 @@ frontend $DOMAIN_NAME-frontend
 	default_backend $DOMAIN_NAME-backend
 backend $DOMAIN_NAME-backend
 	balance roundrobin
-	server $STUDENT_ID-web-01 54.236.56.204 check
+	server $STUDENT_ID-web-01 54.236.56.204:80 check
 	server $STUDENT_ID-web-02 54.197.112.57:80 check
 "
 echo "$HAPROXY_LB_CONFIG" | sudo tee -a $CONFIG_FILE
