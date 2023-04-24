@@ -46,4 +46,4 @@ if __name__ == '__main__':
         user.get('name'), completed_todos, len(user_todos)
     ))
     for todo_titles in completed_todos_titles:
-        print('\t {}'.format(todo))
+        print('\t {}'.format(todo_titles))
