@@ -16,12 +16,10 @@ Second and N next lines display the title of completed tasks:
 """
 
 
+import requests
 from sys import argv
 
-
 if __name__ == '__main__':
-
-    import requests
 
     """
     Sample URLs
