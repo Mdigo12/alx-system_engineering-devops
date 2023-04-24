@@ -17,27 +17,29 @@ Second and N next lines display the title of completed tasks:
 
 
 from sys import argv
-import requests
+
 
 if __name__ == '__main__':
+
+    import requests
+
     """
     Sample URLs
     To users`https://jsonplaceholder.typicode.com/users/`
     To a user `https://jsonplaceholder.typicode.com/users/2/`
     To a user's todos `https://jsonplaceholder.typicode.com/users/2/todos`
     """
-
     user_id = argv[1]
     base_url = 'https://jsonplaceholder.typicode.com/'
     users_url = base_url + 'users/'
-    user = requests.get(users_url + user_id).json()
     user_todos_url = users_url + user_id + '/todos'
+    user = requests.get(users_url + user_id).json()
     user_todos = requests.get(user_todos_url).json()
     completed_todos = 0
     completed_todos_titles = []
 
     for todo in user_todos:
-        if todo.get("completed") is True:
+        if todo.get("completed") == 'true':
             completed_todos += 1
             completed_todos_titles.append(todo.get('title'))
     print('Employee {} is done with tasks({}/{}):'.format(
