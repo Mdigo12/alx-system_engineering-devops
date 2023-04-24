@@ -39,7 +39,7 @@ if __name__ == '__main__':
     completed_todos_titles = []
 
     for todo in user_todos:
-        if todo.get("completed") == True:
+        if todo.get("completed") is True:
             completed_todos += 1
             completed_todos_titles.append(todo.get('title'))
     print('Employee {} is done with tasks({}/{}):'.format(
