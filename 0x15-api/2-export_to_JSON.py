@@ -35,7 +35,7 @@ if __name__ == '__main__':
     with open(file_name, 'w') as f:
         tasks_list = []
         for todo in user_todos:
-            task_dict = {"Task": todo.get('title'),
+            task_dict = {"task": todo.get('title'),
                          "completed": todo.get('completed'),
                          "username": user.get('username')}
             tasks_list.append(task_dict)
