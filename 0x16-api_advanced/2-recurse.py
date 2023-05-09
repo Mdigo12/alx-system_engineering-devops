@@ -13,7 +13,8 @@ import requests
 def recurse(subreddit, hot_list=[], after=None):
     """queries the Reddit API recursively"""
 
-    url = "https://www.reddit.com/r/{}/hot.json?limit=50&after={}".format(subreddit, after)
+    url = "https://www.reddit.com/r/{}/hot.json?limit=50&after={}".format(
+        subreddit, after)
     headers = {'User-Agent': 'My Browser'}
     response = requests.get(url, headers=headers, allow_redirects=False)
 
